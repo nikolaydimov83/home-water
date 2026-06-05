@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Water Controller
+After=network.target
+
+[Service]
+Type=simple
+User=nikolay-garden
+WorkingDirectory=/home/nikolay-garden/home-water
+ExecStart=/home/nikolay-garden/home-water/venv/bin/python /home/nikolay-garden/home-water/controller.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

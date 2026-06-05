@@ -54,6 +54,19 @@ def cmd_update(args):
     )
 
 
+def cmd_run(args):
+    data = {}
+    if args.gpio is not None:
+        data["gpio_pin"] = args.gpio
+    if args.duration is not None:
+        data["duration_sec"] = args.duration
+    print(
+        json.dumps(
+            _req("POST", "/tasks/run", data), indent=2, ensure_ascii=False
+        )
+    )
+
+
 def cmd_delete(args):
     print(
         json.dumps(
@@ -85,6 +98,10 @@ def main():
     sp.add_argument("--minute", type=int)
     sp.add_argument("--duration", type=int)
 
+    sp = sub.add_parser("run", help="Пуска реле веднага за N секунди")
+    sp.add_argument("--gpio", type=int, default=26, help="GPIO пин (дефолт: 26)")
+    sp.add_argument("--duration", type=int, default=7, help="Секунди (дефолт: 7)")
+
     sp = sub.add_parser("delete", help="Изтриване на задача")
     sp.add_argument("id", type=int)
 
@@ -98,6 +115,8 @@ def main():
             cmd_show(args)
         case "update":
             cmd_update(args)
+        case "run":
+            cmd_run(args)
         case "delete":
             cmd_delete(args)
 
