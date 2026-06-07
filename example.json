@@ -5,20 +5,19 @@
     "duration_sec": 4
 }
 
----
 
-/run:
+//run:
 {
     "gpio_pin": 26,
     "duration_sec": 5
 }
 
-/on:
+//on:
 {
     "gpio_pin": 20
 }
 
-/off:
+//off:
 {
     "gpio_pin": 20
 }
