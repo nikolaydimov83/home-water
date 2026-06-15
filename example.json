@@ -3,19 +3,19 @@
     "hour": 10,
     "minute": 53,
     "duration_sec": 4
-}
+},
 
 
 //run:
 {
     "gpio_pin": 26,
     "duration_sec": 5
-}
+},
 
 //on:
 {
     "gpio_pin": 20
-}
+},
 
 //off:
 {
