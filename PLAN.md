@@ -415,7 +415,7 @@ python scheduler.py   # слуша на 0.0.0.0:8080
 ```bash
 export SCHEDULER_URL=http://192.168.1.100:8080
 
-# Създава с дефолти (GPIO 26, 23:00, 7s)
+# Създава с дефолти (GPIO 26, 23:00, 7s) - to be further elaborated
 python controller.py add
 
 # Създава с конкретни параметри
