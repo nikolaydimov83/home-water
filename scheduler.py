@@ -63,7 +63,7 @@ class Scheduler:
         else:
             self._unschedule(task_id)
         return task
-
+#
     async def delete_task(self, task_id: int) -> bool:
         self._unschedule(task_id)
         return await self.db.delete(task_id)
