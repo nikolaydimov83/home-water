@@ -5,6 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 #! 26 is the rightmost relay when you are seeing the relays from the green part
+# 21
 
 pins = [26, 20, 21]
 
